@@ -1,0 +1,9 @@
+.inputsDiv input {
+    margin-bottom : 1rem;
+    width: 80%;
+}
+
+
+.labelsDiv label {
+    margin-bottom :1.5rem;
+}

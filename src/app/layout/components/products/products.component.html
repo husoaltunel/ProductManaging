@@ -1,0 +1,20 @@
+<div class="container">
+    <button *ngIf="hasRoleNameAsWorker()" class="btn btn-lg btn-success my-5" [routerLink]="['create-product']">Create</button>
+
+    <table class="table table-striped">
+        <thead>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{product.name}}</td>
+                <td>{{product.quantity}}</td>
+                <td>{{product.price}}</td>
+                <td *ngIf="hasRoleNameAsWorker()" class="btn-cell"><button class="btn btn-warning btn-md" [routerLink]="['/products/',product.id]" [state]="product">Edit</button></td>
+                <td *ngIf="hasRoleNameAsWorker()" class="btn-cell"><button class="btn btn-danger btn-md" (click)="delete(product.id)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
